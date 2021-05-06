@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* First hearder with NYT logo*/
+#header-container {
+  max-width: 1200px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+#secundary-header {
+  display: flex;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #dfdfe5;
+  /* understand better how to define the shadow only on the bottom*/
+  box-shadow: 1px 1px 5px 0.1px #dadce0;
+  margin-bottom: 20px;
+}
+#secundary-header span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+#secundary-options {
+  border-left: 1px solid;
+  padding-left: 10px;
+}
+#secundary-options li {
+  display: inline;
+  padding: 5px;
+}
+
+#secundary-options li:nth-child(1) span {
+  font-weight: bold;
+  color: #d0021b;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* social box */
+.social-box {
+  border-bottom: 1px solid #dfdfe5;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+.social-box li {
+  display: inline;
+  padding: 10px;
+}
+.social-box li:nth-child(4) {
+  position: relative;
+  top: 8px;
+}
+
+.link-social {
+  background: #dfdfe5;
+  border-radius: 100%;
+  padding: 5px;
+}
+.link-social:hover {
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #dfdfe5;
+  padding: 4px;
+}
+
+/* article*/
+#main-article {
+  text-align: left;
+  max-width: 1200px;
+  padding: 20px;
+}
+#main-article p {
+  line-height: 1.4rem;
+}
+
+#main-article h1 {
+  font-family: "Cheltenham";
+  font-style: italic;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.column-title {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Article's Author*/
+.article-info {
+  display: flex;
+  border-top: 0.5px solid #ccc;
+}
+.img-author {
+  width: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.author {
+  font-size: 12px;
+  font-weight: bold;
+  align-self: center;
+  padding: 5px;
+}
+
+/* Article photos*/
+.credit-photo {
+  font-size: ;
+}
+.img-article {
+  margin-top: 20px;
+}
+.caption-photo {
+  font-size: 14px;
+  color: #636366;
+}
+.credit-photo {
+  font-size: 12px;
+  color: #7c7c7f;
+}
