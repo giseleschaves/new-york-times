@@ -6,37 +6,53 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* First hearder with NYT logo*/
-#header-container {
-  max-width: 1200px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+p {
+  padding-bottom: 10px;
 }
+/* First hearder with NYT logo*/
 
 #main-header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
+  max-width: 1200px;
 }
 
 #secundary-header {
+  background: #fff;
   display: flex;
   font-size: 14px;
-  padding: 10px;
+  height: 70px;
   border: 1px solid #dfdfe5;
+  padding-left: 5px;
+  /* to fix the secundary header on the top when scrolling, it doesn't work if the div is inside of header tag */
+  position: sticky;
+  top: 0;
   /* understand better how to define the shadow only on the bottom*/
   box-shadow: 1px 1px 5px 0.1px #dadce0;
   margin-bottom: 20px;
+  z-index: 0;
+}
+#secundary-header div {
+  margin: auto;
 }
 #secundary-header span {
-  font-weight: bold;
-  margin-right: 10px;
+  font-weight: 900;
 }
+
+#secundary-header a {
+  text-decoration: none;
+  color: #000;
+}
+#secundary-header a:hover {
+  text-decoration: underline;
+}
+
 #secundary-options {
-  border-left: 1px solid;
+  border-left: 1px solid #dfdfe5;
   padding-left: 10px;
 }
+
 #secundary-options li {
   display: inline;
   padding: 5px;
@@ -44,7 +60,7 @@ body {
 
 #secundary-options li:nth-child(1) span {
   font-weight: bold;
-  color: #d0021b;
+  color: #d0021b; /*smae color of latest updates */
   font-weight: 900;
   font-size: 12px;
 }
@@ -58,10 +74,6 @@ body {
 .social-box li {
   display: inline;
   padding: 10px;
-}
-.social-box li:nth-child(4) {
-  position: relative;
-  top: 8px;
 }
 
 .link-social {
@@ -80,15 +92,18 @@ body {
 #main-article {
   text-align: left;
   max-width: 1200px;
-  padding: 20px;
+  padding-left: 35px;
+  margin-bottom: 30px;
 }
+
 #main-article p {
-  line-height: 1.4rem;
+  line-height: 1.4rem; /* review if its possible to define in only one*/
 }
 
 #main-article h1 {
   font-family: "Cheltenham";
   font-style: italic;
+  font-size: 2em;
   margin-top: 15px;
   margin-bottom: 10px;
 }
@@ -108,24 +123,250 @@ body {
   margin-bottom: 25px;
 }
 .author {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   align-self: center;
   padding: 5px;
 }
+/* style is on span tag, because of this a element should be refered to change the decoration*/
+.author a {
+  color: #000;
+}
+.author a:hover {
+  text-decoration: none;
+}
+
+.date-article {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+/* Article links */
+/* style is on a tag, because of this to reference the element a is before the class*/
+.another-article {
+  color: #326891;
+}
+a.another-article:hover {
+  text-decoration: none;
+}
 
 /* Article photos*/
-.credit-photo {
-  font-size: ;
+.img-article-container {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin: auto;
+  width: fit-content;
 }
+
 .img-article {
   margin-top: 20px;
 }
 .caption-photo {
+  text-align: left;
   font-size: 14px;
   color: #636366;
+  max-width: 600px;
 }
 .credit-photo {
   font-size: 12px;
   color: #7c7c7f;
+}
+
+/* subscription box*/
+#subscription {
+  margin: auto;
+  font-weight: bold;
+  border: 1px solid blue;
+  width: fit-content;
+  text-align: center;
+}
+#subscription span {
+  color: #326891; /* same color of the links inside of the article*/
+}
+#subscription-border {
+  background: violet;
+  width: 30px;
+}
+
+/* box latest updates */
+#latest-updates {
+  margin: auto;
+  max-width: 600px;
+  border: 1px solid #c6c6cc;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* reference the 3rd element type span inside the container */
+#latest-updates > div:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+/* reference the 2nd element type span inside the container */
+#latest-updates > div:nth-of-type(2) {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#latest-updates > div:nth-of-type(3) {
+  color: #d0021b;
+  font-size: 12px;
+  font-weight: normal;
+}
+#latest-updates ul {
+  padding-left: 15px;
+}
+#latest-updates li {
+  list-style: disc;
+  /* put the bullet points outside the list item */
+  list-style-position: outside;
+  line-height: 1.7rem;
+  padding-top: 10px;
+}
+
+#latest-updates li a {
+  color: #000;
+  text-decoration-color: #c6c6cc;
+}
+#latest-updates li a:hover {
+  text-decoration: none;
+}
+
+.author-more-info {
+  margin: auto;
+  max-width: 600px;
+  border-top: 1px solid #c6c6cc;
+  border-bottom: 1px solid #c6c6cc;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-style: italic;
+  line-height: 1.7rem;
+}
+#more-info-section {
+  margin: auto;
+  max-width: 600px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#more-info-section li {
+  line-height: 1.7rem;
+  padding-bottom: 20px;
+}
+
+#box-opinion {
+  margin: auto;
+  max-width: 600px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#box-opinion li span {
+  font-weight: bold;
+}
+#box-opinion li {
+  list-style: none;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+/* Container with suggestions of newsletters */
+#box-newsletters {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  max-width: 600px;
+  margin: auto;
+  padding: 10px 0 20px 0;
+}
+#box-newsletters span {
+  font-weight: bold;
+}
+.news-suggestion {
+  margin-top: 10px;
+  border: 1px solid #c6c6cc;
+  padding: 10px;
+  display: inline-flex;
+}
+.news-suggestion img {
+  margin-right: 12px;
+}
+.news-suggestion li {
+  list-style: none;
+}
+.news-suggestion li:nth-child(1) {
+  font-size: 12px;
+}
+.news-suggestion li:nth-child(2) {
+  font-weight: 900;
+}
+
+#box-column {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 15px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 30px;
+}
+#box-column > span {
+  font-weight: 900;
+}
+#box-column div {
+  display: flex;
+}
+.column-article {
+  margin: 10px 0 10px 0;
+  max-width: 300px;
+  padding-bottom: 20px;
+}
+div.column-article:nth-of-type(2) {
+  border-left: 1px solid #c6c6cc;
+  padding-left: 15px;
+  margin-left: 15px;
+}
+.column-article li {
+  list-style: none;
+  padding: 5px;
+}
+.column-article li:nth-of-type(2) {
+  font-size: 13px;
+}
+.column-article span {
+  font-weight: bold;
+}
+
+#box-more {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 15px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+#main-footer {
+  border-top-style: double;
+  border-color: #bcbcbc;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+#main-footer li {
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #bcbcbc;
+  list-style-position: inside;
+  list-style: none;
+}
+#subscription-footer {
+  background: #2c2c2c;
+  height: 80px;
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  bottom: 10px;
 }
